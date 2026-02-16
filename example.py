@@ -31,14 +31,29 @@ Steps
   4. Create a function to check the library rules
   5. Use a WHILE loop to keep checking until the user is ready to checkout
   6. Use format string (f string) function
+
+
+Expected Output:
+    iterate books using for loop
+    The Hobbit
+    The Lord of the Rings
+    The Hunger Games
+    iterate books using for..range
+    The Hobbit
+    The Lord of the Rings
+    The Hunger Games
+    You can check out more books.
+    Are you ready to checkout your books? Enter a y if so: y
+    Thank you John Smith, you checked out 3 today! Enjoy!
 """
 
 
 def check_library_rules(account_is_active: bool, books_checked_out: int) -> str:
-    '''
+    """
     Checks to see if a member can check out more books based on the input parameters
     and returns a message indicating the result.
-    '''
+    """
+
     # create a variable to store the result of the rules
     message = ""
 
@@ -116,7 +131,7 @@ def main():
     # ------------------------------------------------------------
     # STEP 5: 
     #   Use a WHILE loop to with the input function to ask the user
-    #  if they are ready to check out and print the message
+    #   if they are ready to check out and print the message
     # ------------------------------------------------------------
 
     ready_to_checkout = False
@@ -136,7 +151,7 @@ def main():
     # STEP 6: 
     #   Use f string to print out the member name and the number of books checked out
     # ------------------------------------------------------------ 
-    print(f"Thank you {member_name}, you checked out {books_checked_out} today! Enjoy!")
+    print(f"Thank you {member_name}, you checked out {books_checked_out} books today! Enjoy!")
 
     print("=" * 75)
  
