@@ -1,11 +1,6 @@
 """
-Assignment:
-  Loops, Events, and Procedures
-
-Instructions:
-  Review the details below and complete the 5 steps. Be sure to commit and sync your
-  code often so that you do not lose your work. Be sure to test your code using
-  python main.py
+Main module for Python starter template.
+This is a simple Hello World placeholder to get started.
 
 Items to discuss in this lesson:
 
@@ -35,6 +30,7 @@ Steps
   3. Use for loops to iterate the list created in step 1
   4. Create a function to check the library rules
   5. Use a WHILE loop to keep checking until the user is ready to checkout
+  6. Use format string (f string) function
 
 
 Expected Output:
@@ -48,56 +44,80 @@ Expected Output:
     The Hunger Games
     You can check out more books.
     Are you ready to checkout your books? Enter a y if so: y
-    You are checked out, have a great day
+    Thank you John Smith, you checked out 3 today! Enjoy!
 """
 
-# add check library rules function here
-# def your_function():
 
+def check_library_rules(account_is_active: bool, books_checked_out: int) -> str:
+    """
+    Checks to see if a member can check out more books based on the input parameters
+    and returns a message indicating the result.
+    """
 
-def main():
+    # create a variable to store the result of the rules
+    message = ""
+
+    # conditional statement to check the library rules
+    if not account_is_active:
+        message = "You must have an active account in order to check out any books."
+    elif books_checked_out >= 5:
+        message = "You cannot check out anymore books, 5 is the limit." 
+    else:
+        message = "You can check out more books."
+
+    return message
+
+def main():  
     print("=" * 75)
 
-    # variables used in prior assignment
+    # store the member's name (string)
     member_name = "John Smith"
-    books_checked_out = 3
-    account_is_active = True
 
     # ------------------------------------------------------------
-    # STEP 1:
+    # STEP 1: 
     #   Use a List data type to store the books the member has checked out
     # ------------------------------------------------------------
 
     # create a List variable to store the books
-    # HINT: []
-
+    member_books = [
+        "The Hobbit",
+        "The Lord of the Rings",
+        "The Hunger Games"
+    ]
+ 
     # ------------------------------------------------------------
-    # STEP 2:
+    # STEP 2: 
     #   Use a for loop to print out each of the books from the variable in step 1
     # ------------------------------------------------------------
 
     # create a for loop and print out each book
-    # for item in list
+    print("iterate books using for loop")
+    for book in member_books:
+        print(book)
 
     # ------------------------------------------------------------
-    # STEP 3:
-    #   Update the books_checked_out variable to use len() function
+    # STEP 3: 
+    #   Update the books_checked_out variable to use len() function 
     #   to set the variable value to match the len of the variable in step 1
     #   and then write a for loop that uses a range to print out each book
     # ------------------------------------------------------------
 
     # store the books that are checked out (number)
+    books_checked_out = len(member_books)
 
-    # iterate the books using range
-    # for i in range
+    print("iterate books using for..range")
+    for i in range(books_checked_out):
+        print(member_books[i])
 
-    # after adding the loops, comment out or remove these print statements
-    print("Member Name:", member_name)
-    print("Books Checked Out:", books_checked_out)
-    print("Account Active:", account_is_active)
+    # store whether the library account is active (boolean)
+    account_is_active = True
+
+    # print("Member Name:", member_name)
+    # print("Books Checked Out:", books_checked_out)
+    # print("Account Active:", account_is_active)
 
     # ------------------------------------------------------------
-    # STEP 4:
+    # STEP 4: 
     #   Create a Function that checks the library rules. It should have
     #   two parameters:
     #     1. account_is_active (bool)
@@ -105,29 +125,36 @@ def main():
     #   It should return a variable called message that is a string
     # ------------------------------------------------------------
 
-    # call your function here
-
-    # conditional statement to check the library rules - remove this code
-    # after you have added a function to replace it
-    if not account_is_active:
-        print("You must have an active account in order to check out any books.")
-    elif books_checked_out >= 5:
-        print("You cannot check out anymore books, 5 is the limit.")
-    else:
-        print("You can check out more books.")
-
+    # message = check_library_rules(account_is_active, books_checked_out)
+    # print(message)
+ 
     # ------------------------------------------------------------
-    # STEP 5:
+    # STEP 5: 
     #   Use a WHILE loop to with the input function to ask the user
     #   if they are ready to check out and print the message
-    #   HINT: us the input() function to ask the user and then
-    #   check if they entered a value such as y
     # ------------------------------------------------------------
 
-    # add WHILE LOOP here
+    ready_to_checkout = False
+    while not ready_to_checkout:
+        # check the library rules
+        message = check_library_rules(account_is_active, books_checked_out)
+        print(message)
+
+        # ask the user if they are ready to checkout
+        user_ready = input("Are you ready to checkout your books? Enter a y if so: ")
+
+        # check the user input
+        if user_ready == "y":
+            ready_to_checkout = True
+
+    # ------------------------------------------------------------
+    # STEP 6: 
+    #   Use f string to print out the member name and the number of books checked out
+    # ------------------------------------------------------------ 
+    print(f"Thank you {member_name}, you checked out {books_checked_out} books today! Enjoy!")
 
     print("=" * 75)
-
+ 
 
 if __name__ == "__main__":
     main()
