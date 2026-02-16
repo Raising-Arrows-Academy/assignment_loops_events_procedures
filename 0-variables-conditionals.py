@@ -18,12 +18,12 @@ def main():
 
     """
      
-    user_name = "Bob"
-    print("Hi", user_name)
-
+    #variables
+    user_name = "Bob" 
     user_points = 10 
     has_enough_points = False
  
+    # conditional statement
     if user_points == 50:
         print("You have 50 points!")
         has_enough_points = True
@@ -31,6 +31,8 @@ def main():
         print("You don't have enough points yet, increasing points by 10")
         user_points += 10
     
+    # call print()
+    print("Hi", user_name)
     print("Current points:", user_points)
     print("Has enough points:", has_enough_points) 
 
