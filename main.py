@@ -1,6 +1,11 @@
 """
-Main module for Python starter template.
-This is a simple Hello World placeholder to get started.
+Assignment:
+  Loops, Events, and Procedures
+
+Instructions:
+  Review the details below and complete the 5 steps. Be sure to commit and sync your
+  code often so that you do not lose your work. Be sure to test your code using
+  python main.py
 
 Items to discuss in this lesson:
 
@@ -30,7 +35,6 @@ Steps
   3. Use for loops to iterate the list created in step 1
   4. Create a function to check the library rules
   5. Use a WHILE loop to keep checking until the user is ready to checkout
-  6. Use format string (f string) function
 
 
 Expected Output:
