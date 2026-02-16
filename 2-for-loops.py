@@ -21,9 +21,6 @@ def main():
     # FOR iterate
     # bounce_actions = []
 
-    # NESTED LOOP
-    # for actions then for range 
-
 
 if __name__ == "__main__":
     main()
